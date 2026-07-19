@@ -1,0 +1,30 @@
+{
+  "name": "barber-studio-servidor",
+  "version": "0.1.0",
+  "description": "Servidor backend de Barber Studio — Node.js + Express + Supabase",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "node index.js",
+    "formato": "prettier --write \"src/**/*.js\" \"index.js\"",
+    "formato:verificar": "prettier --check \"src/**/*.js\" \"index.js\""
+  },
+  "keywords": [
+    "barberia",
+    "express",
+    "supabase",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.110.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.5"
+  }
+}

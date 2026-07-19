@@ -1,50 +1,66 @@
-# Welcome to your Expo app 👋
+# ✂ Barber Studio
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicación web para la gestión de una barbería moderna.
 
-## Get started
+## Tecnologías
 
-1. Install dependencies
+| Capa | Tecnología |
+|------|-----------|
+| Frontend | React + Vite + Tailwind CSS v4 + Motion |
+| Backend | Node.js + Express |
+| Base de datos | Supabase (PostgreSQL) |
+| IA | Gemini API |
+| Automatizaciones | n8n |
+| Reportes | ExcelJS |
 
-   ```bash
-   npm install
-   ```
+## Estructura del proyecto
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+barberia-app/
+├── cliente/          → Frontend React
+├── servidor/         → Backend Node.js + Express
+├── base_datos/       → Documentación de la base de datos
+├── documentacion/    → Documentación del proyecto
+└── recursos/         → Recursos estáticos compartidos
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Cómo ejecutar en desarrollo
 
-## Learn more
+### Frontend
+```bash
+cd cliente
+npm install
+npm run dev
+```
+Disponible en: http://localhost:5173
 
-To learn more about developing your project with Expo, look at the following resources:
+### Backend
+```bash
+cd servidor
+# Crea el archivo .env basándote en .env.example
+cp .env.example .env
+# Completa las credenciales de Supabase en .env
+npm run dev
+```
+Disponible en: http://localhost:3000
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Variables de entorno
 
-## Join the community
+- Ver `servidor/.env.example` para las variables del backend
+- Ver `cliente/.env.example` para las variables del frontend
 
-Join our community of developers creating universal apps.
+⚠️ **Nunca subas archivos `.env` al repositorio**
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Módulos del proyecto
+
+1. ✅ Estructura base
+2. 🔒 Página web pública
+3. 🔒 Reserva de citas
+4. 🔒 Panel del administrador
+5. 🔒 Agenda
+6. 🔒 Clientes
+7. 🔒 Servicios
+8. 🔒 Dashboard
+9. 🔒 Inteligencia Artificial
+10. 🔒 Automatizaciones
+11. 🔒 Reportes
