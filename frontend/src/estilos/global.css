@@ -1,0 +1,312 @@
+/* =============================================================
+   Sistema de diseño global — DC Barber Studio
+   Identidad visual: Negro profundo · Plata metálica · Blanco
+   ============================================================= */
+
+@import "tailwindcss";
+
+/* ============================================================
+   TIPOGRAFÍAS
+   ============================================================ */
+:root {
+  /* Logo DC — Tipografía exclusiva del logotipo (Cormorant Garamond: lujo, carácter) */
+  --fuente-logo: 'Cormorant Garamond', 'Georgia', serif;
+
+  /* Alternativa bold para el logo (Bebas Neue: fuerza, barbería) */
+  --fuente-logo-bold: 'Bebas Neue', 'Impact', sans-serif;
+
+  /* Tipografía principal del cuerpo */
+  --fuente-principal: 'Inter', 'Helvetica Neue', sans-serif;
+
+  /* Tipografía decorativa para títulos y secciones */
+  --fuente-decorativa: 'Playfair Display', 'Georgia', serif;
+}
+
+
+/* ============================================================
+   PALETA DE COLORES — Identidad DC Barber Studio
+   ============================================================ */
+:root {
+  /* ---- Fondo ---- */
+  --color-fondo:          #0A0A0A;   /* Negro profundo — fondo principal */
+  --color-fondo-carta:    #111111;   /* Negro suave — tarjetas y paneles */
+  --color-fondo-elevado:  #1C1C1C;   /* Gris muy oscuro — elementos elevados */
+  --color-fondo-hover:    #242424;   /* Gris oscuro — estado hover de elementos */
+
+  /* ---- Texto ---- */
+  --color-texto:          #FFFFFF;   /* Blanco puro — texto principal */
+  --color-texto-suave:    #888888;   /* Gris medio — texto secundario */
+  --color-texto-muted:    #555555;   /* Gris oscuro — texto desactivado */
+  --color-texto-inverso:  #0A0A0A;   /* Negro — texto sobre fondos claros */
+
+  /* ---- Metálico / Plata (solo para elementos destacados) ---- */
+  --color-metalico:         #C0C0C0; /* Plata base */
+  --color-metalico-claro:   #E8E8E8; /* Plata brillante */
+  --color-metalico-oscuro:  #888888; /* Plata opaca */
+  --color-metalico-brillo:  #F5F5F5; /* Destello máximo */
+
+  /* ---- Bordes ---- */
+  --color-borde:          #2A2A2A;   /* Gris muy oscuro — bordes generales */
+  --color-borde-suave:    #1E1E1E;   /* Gris sutil — separadores */
+  --color-borde-metalico: #3A3A3A;   /* Gris medio — bordes con acento */
+
+  /* ---- Estados del sistema ---- */
+  --color-exito:          #4CAF50;
+  --color-error:          #F44336;
+  --color-advertencia:    #FF9800;
+  --color-info:           #2196F3;
+}
+
+
+/* ============================================================
+   GRADIENTES METÁLICOS
+   Solo para elementos de alta jerarquía visual (logo, botones CTA)
+   ============================================================ */
+:root {
+  /* Gradiente metálico principal del logo DC */
+  --gradiente-metalico: linear-gradient(
+    135deg,
+    #888888 0%,
+    #C0C0C0 25%,
+    #E8E8E8 45%,
+    #F5F5F5 50%,
+    #E8E8E8 55%,
+    #C0C0C0 75%,
+    #888888 100%
+  );
+
+  /* Gradiente metálico para botones CTA */
+  --gradiente-metalico-boton: linear-gradient(
+    135deg,
+    #707070 0%,
+    #AAAAAA 40%,
+    #D8D8D8 50%,
+    #AAAAAA 60%,
+    #707070 100%
+  );
+
+  /* Gradiente de fondo hero */
+  --gradiente-fondo-hero: linear-gradient(
+    180deg,
+    #0A0A0A 0%,
+    #111111 50%,
+    #0A0A0A 100%
+  );
+
+  /* Gradiente sutil para separadores */
+  --gradiente-separador: linear-gradient(
+    90deg,
+    transparent 0%,
+    #3A3A3A 50%,
+    transparent 100%
+  );
+}
+
+
+/* ============================================================
+   SOMBRAS PREMIUM
+   ============================================================ */
+:root {
+  /* Sombra base para tarjetas */
+  --sombra-carta: 0 4px 24px rgba(0, 0, 0, 0.4);
+
+  /* Sombra elevada para modales y dropdowns */
+  --sombra-elevada: 0 8px 48px rgba(0, 0, 0, 0.6);
+
+  /* Sombra máxima para overlays */
+  --sombra-maxima: 0 16px 64px rgba(0, 0, 0, 0.8);
+
+  /* Sombra metálica — efecto brillo plateado */
+  --sombra-metalica: 0 0 20px rgba(192, 192, 192, 0.15),
+                     0 0 40px rgba(192, 192, 192, 0.08);
+
+  /* Sombra metálica intensa — hover de botones CTA */
+  --sombra-metalica-hover: 0 0 30px rgba(220, 220, 220, 0.25),
+                            0 0 60px rgba(192, 192, 192, 0.12);
+
+  /* Sombra interior — inputs y campos */
+  --sombra-interior: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+
+  /* Sombra texto logo DC */
+  --sombra-texto-logo: 0 0 40px rgba(200, 200, 200, 0.3),
+                       0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+
+/* ============================================================
+   TRANSICIONES REUTILIZABLES
+   ============================================================ */
+:root {
+  /* Velocidades */
+  --velocidad-rapida:  0.15s;
+  --velocidad-base:    0.25s;
+  --velocidad-suave:   0.4s;
+  --velocidad-lenta:   0.6s;
+  --velocidad-muy-lenta: 1s;
+
+  /* Curvas de animación */
+  --ease-base:       ease-in-out;
+  --ease-entrada:    cubic-bezier(0.16, 1, 0.3, 1);    /* Springy */
+  --ease-salida:     cubic-bezier(0.4, 0, 0.6, 1);
+  --ease-premium:    cubic-bezier(0.22, 1, 0.36, 1);   /* Ultra suave */
+  --ease-rebote:     cubic-bezier(0.34, 1.56, 0.64, 1);/* Pequeño rebote */
+
+  /* Transiciones compuestas listas para usar */
+  --transicion-rapida:  var(--velocidad-rapida)  var(--ease-base);
+  --transicion-base:    var(--velocidad-base)    var(--ease-base);
+  --transicion-suave:   var(--velocidad-suave)   var(--ease-premium);
+  --transicion-entrada: var(--velocidad-suave)   var(--ease-entrada);
+}
+
+
+/* ============================================================
+   ESPACIADO Y GEOMETRÍA
+   ============================================================ */
+:root {
+  --radio-sm:   0.25rem;  /*  4px */
+  --radio-base: 0.5rem;   /*  8px */
+  --radio-md:   0.75rem;  /* 12px */
+  --radio-lg:   1rem;     /* 16px */
+  --radio-xl:   1.5rem;   /* 24px */
+  --radio-pill: 9999px;   /* Cápsula */
+}
+
+
+/* ============================================================
+   RESET Y BASE
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+
+/* ============================================================
+   CLASES DE IDENTIDAD DE MARCA
+   Solo para el logo DC y elementos de alta jerarquía
+   ============================================================ */
+
+/* Texto con gradiente metálico */
+.texto-metalico {
+  background: var(--gradiente-metalico);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none; /* text-shadow no funciona con background-clip */
+  filter: drop-shadow(0 0 20px rgba(200, 200, 200, 0.2));
+}
+
+/* Logo DC — el elemento de mayor jerarquía visual */
+.logo-dc {
+  font-family: var(--fuente-logo-bold);
+  letter-spacing: 0.15em;
+  line-height: 1;
+  text-transform: uppercase;
+  background: var(--gradiente-metalico);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 30px rgba(200, 200, 200, 0.25));
+}
+
+/* Subtítulo "BARBER STUDIO" */
+.logo-subtitulo {
+  font-family: var(--fuente-principal);
+  font-weight: 300;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--color-metalico-oscuro);
+  font-size: 0.75rem;
+}
+
+/* Separador de marca (línea decorativa) */
+.separador-marca {
+  width: 100%;
+  height: 1px;
+  background: var(--gradiente-separador);
+}
+
+/* Efecto brillo metálico en hover — solo para CTAs y elementos destacados */
+.brillo-metalico-hover {
+  transition: filter var(--transicion-suave),
+              box-shadow var(--transicion-suave);
+}
+.brillo-metalico-hover:hover {
+  filter: brightness(1.15);
+  box-shadow: var(--sombra-metalica-hover);
+}
+
+
+/* ============================================================
+   SCROLLBAR PERSONALIZADA
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-fondo);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-borde-metalico);
+  border-radius: var(--radio-pill);
+  transition: background var(--transicion-base);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-metalico-oscuro);
+}
+
+
+/* ============================================================
+   SELECCIÓN DE TEXTO
+   ============================================================ */
+::selection {
+  background-color: rgba(192, 192, 192, 0.2);
+  color: var(--color-metalico-claro);
+}
+
+
+/* ============================================================
+   UTILIDADES GLOBALES
+   ============================================================ */
+
+/* Contenedor centrado con ancho máximo */
+.contenedor {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Texto invisible (accesibilidad) */
+.sr-solo {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

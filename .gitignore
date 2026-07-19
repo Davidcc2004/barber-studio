@@ -1,43 +1,49 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+# ==========================================
+# DC BARBER STUDIO - GITIGNORE
+# ==========================================
 
-# dependencies
+# Variables de entorno (NUNCA subir)
+.env
+.env.*
+!.env.example
+
+frontend/.env
+frontend/.env.*
+backend/.env
+backend/.env.*
+
+# Dependencias
 node_modules/
+frontend/node_modules/
+backend/node_modules/
 
-# Expo
-.expo/
-dist/
-web-build/
-expo-env.d.ts
+# Builds
+frontend/dist/
+frontend/build/
+backend/dist/
 
-# Native
-.kotlin/
-*.orig.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
+# Supabase local
+supabase/.temp/
+supabase/.branches/
 
-# Metro
-.metro-health-check*
+# Logs
+*.log
+npm-debug.log*
+logs/
 
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
+# Cache
+.cache/
+.vite/
+frontend/.vite/
 
-# macOS
+# Editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Sistema
 .DS_Store
-*.pem
-
-# local env files
-.env*.local
-
-# typescript
-*.tsbuildinfo
-
-app-example
-
-# generated native folders
-/ios
-/android
+Thumbs.db
