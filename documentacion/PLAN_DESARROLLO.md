@@ -34,7 +34,7 @@
 ### Módulo 3 — En progreso (2026-07-13)
 - [x] Paso 1: Interfaz de reserva, stepper, estado global y navegación programática (`useNavigate`).
 - [x] Paso 2: Diseño completo de Base de Datos y creación de migraciones locales (7 tablas, ENUMs, triggers, índices, RLS).
-- [ ] Paso 3: Conexión Supabase.
+- [x] Paso 3: Conexión Supabase (Estructura de backend configurada, migraciones pusheadas a remoto, CLI configurada).
 - [ ] Paso 4: Registro/Auth.
 - [ ] Paso 5: Confirmación de reserva.
 
